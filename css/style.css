@@ -7,7 +7,7 @@ body {
         color: #ffffff;
         min-width: 1200px;
         height: 100%;
-        /*background-image: url("../private/gllacy-index-12000000000000000.jpg");*/
+        /*background-image: url("../private/gllacy-index-1200.jpg");*/
         background-repeat: no-repeat;
         background-size: 1200px auto;
         background-color: #849d8f;
@@ -20,7 +20,7 @@ body {
   background-repeat: no-repeat;
 }    
 .main-header {
-    min-height: 600px; /* Временно для сетки */
+    min-height: 600px; 
     z-index: 2;
 }
 .container {
@@ -65,7 +65,7 @@ img {
     padding: 0;
     list-style: none;
 }
-.site-navigation > li {    /*  */
+.site-navigation > li {   
     position: relative;    
 }
 .site-navigation > li:hover > ul.inner-catalog-navigation {
@@ -117,7 +117,7 @@ img {
     background-color: #d07058;
     text-shadow: none;
     border-radius: 28px;
-    padding: 8px 10px;
+    padding: 6px 14px;
 }
 .site-navigation-current {
     background-color: #d07058;
@@ -138,7 +138,7 @@ img {
     margin: 0;
     margin-left: -6px;
     margin-top: 5px;
-    z-index: 50;
+    z-index: 50;    /*как его поднять на верхний уровень? сейчас он ложиться под breadcrumbs*/
     display: none;
 }  
 .inner-catalog-navigation a {
@@ -186,7 +186,7 @@ img {
     min-height: 100px; 
     z-index: 2;
 }
-
+/*---------------------------------------------------------------------*/
 
 
 .search form{
@@ -281,10 +281,6 @@ img {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 25px;
 }
-/*.user-navigation > .basket {
-    position: relative;
-    display: inline-block;
-}*/
 .basket  span::before{
     content: "";
     position: absolute; 
@@ -389,7 +385,7 @@ input[type="radio"].visually-hidden {
     font-size: 14px;
     padding: 0;
     margin: 0;
-    margin-top: 16px;    
+    margin-top: 19px;  
     list-style: none;
 } 
 .breadcrumbs li {
@@ -424,7 +420,7 @@ input[type="radio"].visually-hidden {
     display: none;
 }
  
-
+/*---------------------------------------------------------------------*/
 
 .slider{
     height: auto;   /* как сделать, чтоб фон тянулся на все окно браузера? Почему высота фото слайдера не вытягивает высоту блока? */
@@ -540,7 +536,7 @@ input[type="radio"].visually-hidden {
     cursor: pointer;
     z-index: 5;
 }
-
+/*---------------------------------------------------------------------*/
 
 
 
@@ -600,27 +596,51 @@ input[type="radio"].visually-hidden {
 .catalog-hits {
     margin-top: 40px;
 }
+.catalog-ice-cream {
+    display: flex;
+    flex-direction: column; 
+    margin-top: 42px;
+}
 .catalog-item {
     position: relative;
 }
-.catalog-list {
+.catalog-ice-cream .catalog-item {
+    position: relative;
+    height: 405px;
+    margin-bottom: -43px; 
+    z-index: 19;     
+}
+    
+.catalog-ice-cream .catalog-item img{
+    border-radius: 50%;
+    background-repeat: no-repeat;
+}
+.catalog-hits .catalog-list,
+.catalog-ice-cream .catalog-list  {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 0;
     padding: 0;
     list-style: none;
-    height: 340px;
     margin-bottom: 25px;
     text-align: center;
     z-index: 5;
 }
-.catalog-hits .catalog-item a {
+.catalog-hits .catalog-list {
+    height: 340px;
+}
+.catalog-ice-cream .catalog-list {
+    height: 1070px;
+}
+.catalog-hits a,
+.catalog-ice-cream .catalog-name {
     font-size: 16px;
     line-height: 22px;
     text-shadow: none;
     text-decoration: underline; 
     position: absolute;
+    width: 258px; 
     left: 2px;
     top: 280px;
     z-index: 6;  
@@ -635,7 +655,7 @@ input[type="radio"].visually-hidden {
     top: 210px; 
     z-index: 6;  
 }
-.catalog-item span {
+.catalog-item .small {
     font-size: 30px;
     line-height: 45px;
     font-weight: 700; 
@@ -645,7 +665,11 @@ input[type="radio"].visually-hidden {
     top: 215px;
     z-index: 6;   
 }
-.catalog-list h4::before {
+.catalog-ice-cream h4 {
+    margin: 0;
+    padding: 0;
+}
+.catalog-hits .catalog-list h4::before {
     content: "";
     position: absolute;
     background-image: url("../img/hit.svg");
@@ -655,39 +679,67 @@ input[type="radio"].visually-hidden {
     background-repeat: no-repeat;
     left: 0;
     top: 0; 
-    z-index: 70; 
-    
+    z-index: 70;     
 }
 .catalog-hits .catalog-list li:first-child {
     background-image: url("../img/product-1.jpg");
     width: 267px; 
     height: 267px; 
     border-radius: 50%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;     
 }
 .catalog-hits .catalog-list li:nth-child(2) {
     background-image: url("../img/product-2.jpg");
     width: 267px; 
     height: 267px; 
     border-radius: 50%;
+    background-repeat: no-repeat;    
 }
 .catalog-hits .catalog-list li:nth-child(3) {
     background-image: url("../img/product-3.jpg");
     width: 267px; 
     height: 267px; 
     border-radius: 50%;
+    background-repeat: no-repeat;     
 }
 .catalog-hits .catalog-list li:last-child {
     background-image: url("../img/product-4.jpg");
     width: 267px; 
     height: 267px; 
     border-radius: 50%;
+    background-repeat: no-repeat;     
 }
-
 .catalog-item:nth-child(4n) {
     margin-right: 0;
-}   
-
+}
+.catalog-ice-cream .catalog-item::after {
+    content: " Быстрый просмотр";
+    padding: 10px 16px 12px 16px;
+    font-size: 18px;
+    line-height: 24px;
+    background-image: -moz-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
+    box-shadow: 0px 1px 2px 0px rgba(172, 16, 0, 0.004);
+    border-radius: 25px;
+    position: absolute;
+    left: 35px;
+    bottom: 20px;
+    display: none;    
+}
+.catalog-ice-cream .catalog-item:hover {
+    height: 405px;
+    width: 293px;
+    padding-top: 5px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 20; 
+}
+.catalog-ice-cream .catalog-item:hover::after {
+    display: block;
+}
 
 
 
@@ -1086,8 +1138,6 @@ fieldset legend {
 .filter-input-radio:checked + label:hover::after {
     background-color: #ffffff;
 }
-
-
 .fillers li:first-child {
     padding-left: 47px;
     padding-right: 0;
@@ -1131,9 +1181,9 @@ fieldset legend {
     font-size: 18px;
     font-weight: 400;
     color:  #ffffff;
-    height: 40px;
-    margin-top: 20px;
-    padding: 0 23px;
+    height: 36px;
+    margin-top: 22px;
+    padding: 0 24px;
     text-shadow: none;
     background-image: none;
     box-shadow: none;
@@ -1142,106 +1192,193 @@ fieldset legend {
 }
 .filter-button:hover {
     color:  #000000;
-    padding: 9px 28px;
     background-image: none;
     background-color: rgba(255, 255, 255, 1);
-    border: none;
-}
-  
+    border: 2px solid white;
+}  
 .filter-button:focus,
 .filter-button:active {
     color:  #000000; 
-    padding: 9px 28px;
     border: none; 
     background-color: rgb(237, 237, 237);
-    box-shadow: inset 0px 2px 1px 0px rgba(105, 105, 105, 0.004);
-    
+    box-shadow: inset 0px 2px 1px 0px rgba(105, 105, 105, 0.004);  
 }
 
   
     
-
-
-
-
-
 
 .pagination-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content:flex-end;
     padding: 0;
     margin: 0;
+    margin-top: 33px;
     list-style: none;
-    min-height: 35px;  /* Временно для сетки */
-    width: 195px;
-  }
-/*.pagination-item {
-  margin-right: 5px;
+    width: 1150px;
+}
+.pagination-item:first-child {
+    position: relative;
 }
 .pagination-item:last-child {
-  margin-right: 0;
+    position: relative;
+    margin-right: 22px;
+}
+.pagination-item:first-child::before {
+   content: "<";
+   position: absolute;
+   left: -20px;
+   top: 5px;  
+}
+.pagination-item:last-child::after {
+    content: ">";
+    position: absolute;
+    left: 40px;
+    top: 5px;
 }
 .pagination-item a {
   display: block;
-  padding: 10px 19px;
+  font-weight: 700;
+  padding: 3px 8px;
+  margin-right: 4px;
   color: #ffffff;
-  background-color: #000000;
 }
 .pagination-item a:hover,
 .pagination-item a:focus,
 .pagination-item a:active {
-  background-color: #663d15;
+  background-color: #eaeaea;
 }
 .pagination-item-current a {
   color: #000000;
   background-color: #ffffff;
+  border-radius: 50%;
 }
-.pagination-item-current a:hover,
-.pagination-item-current a:focus,
-.pagination-item-current a:active {
-  color: #000000;
-  background-color: #ffffff;
-}*/
+/*---------------------------------------------------------------------*/
+
+
 .main-footer {
-    /*position: absolute;
-    left: 0;
-    bottom: 0;*/
     width: 100%;
     height: 80px; 
     margin: 0;
     margin-top: 10px;
+    padding-top: 5px;
+}
+.inner-page .main-footer .container { 
+    margin-top: 14px;
+    padding-top: 15px; 
+    height: 80px;   
+    border-top: 1px solid #ffffff79;
 }
 .main-footer .container {
     display: flex;
+    justify-content: space-between;
 }
-.footer-social {
+.footer-social ul{
+    display: flex;
+    justify-content: space-between; 
     width: 190px;
     margin: 0;
-    margin-right: 210px;
+    padding: 0;
+    padding-top: 20px;
 }
-.info {
+.footer-social li:first-child {  /*как поменять цвет svg?*/
+    background-image: url("../img/twitter.svg");
+    background-color: #e6ebe9;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px; 
+    border-radius: 50%;
+    border: 3px solid #c2cec7;
+}
+.footer-social li:nth-child(2) {
+    background-image: url("../img/instagram.svg");
+    background-color: #e6ebe9;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px; 
+    border-radius: 50%;
+    border: 3px solid #c2cec7;
+}
+.footer-social li:nth-child(3) {
+    background-image: url("../img/fb.svg");
+    background-color: #e6ebe9;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px; 
+    border-radius: 50%;
+    border: 3px solid #c2cec7;
+}
+.footer-social li:last-child {
+    background-image: url("../img/vk.svg");
+    background-color: #e6ebe9;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px; 
+    border-radius: 50%;
+    border: 3px solid #c2cec7;
+}
+.info ul{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    width: 315px;
     margin: 0;
+    padding: 0;
+    padding-top: 5px;
+    list-style: none; 
+}
+.info li { 
+    height: 15px;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+} 
+.info li a{ 
+    text-decoration: underline; 
+}
+.info li {
+    position: relative;
+}
+.info li:first-child,
+.info li:nth-child(3) {
+    width: 120px;
+    padding-left: 7px; 
+}
+.info li:last-child,
+.info li:nth-child(2) {
+    width: 165px;
+}
+.info li:first-child::before {
+    content: "";
+    background-image: url("../img/heart.svg");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 17px;
+    left: -14px;
+    width: 15px;
+    height: 15px;
 }
 .footer-copyright {
-    width: 195px;
+    width: 193px;
     margin: 0;
-    margin-left: auto;
-    padding-top: 20px;
+    padding-top: 2px;
 }
 .main-footer li {
     list-style: none;
 }
+.main-footer img {
+    padding-left: 2px;
+    padding-top: 1px;
+}
 .main-footer a, p {
+    margin: 0;
+    padding: 0;
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
 }
-
-
-
-
-
-
+/*---------------------------------------------------------------------*/
 
 
 
@@ -1319,18 +1456,7 @@ fieldset legend {
     border-style: none;
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
+/*---------------------------------------------------------------------*/
 
 
 .modal-basket {   /*как выводить корзину на экран?*/
