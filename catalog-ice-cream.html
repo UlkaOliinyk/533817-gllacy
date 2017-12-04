@@ -8,49 +8,48 @@
     <link href="css/outline.cs" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
   </head>
-  <body class="inner-page">
 
+  <body class="inner-page">
     <header class="main-header">
       <nav class="main-navigation">
         <div class="main-navigation-wrapper">
           <div class="container">
-            <a class="main-header-logo" href="index.html">
+            <a class="main-header-logo">
               <img src="img/Logo.svg" width="154" height="64" alt="Логотип магазин " Глэйси "">
             </a>
             <ul class="site-navigation">
-              <li class="site-navigation-current">
-                <a href="catalog.html">Каталог</a>
-                  <ul class="inner-catalog-navigation">
-                    <li><a href="catalog.html">Новинки</a></li>
-                    <li><a href="catalog-ice-cream.html">Сливочное</a></li>
-                    <li><a href="catalog.html">Щербеты</a></li>
-                    <li><a href="catalog.html">Фруктовый лед</a></li>
-                    <li><a href="catalog.html">Мелорин</a></li>
-                  </ul>
+              <li class="site-navigation-current"><a href="catalog.html">Каталог</a>
+                <ul class="inner-catalog-navigation">
+                          <li><a href="catalog.html">Новинки</a></li>
+                          <li class="site-navigation-current inner-current"><a href="catalog-ice-cream.html">Сливочное</a></li>
+                          <li><a href="catalog.html">Щербеты</a></li>
+                          <li><a href="catalog.html">Фруктовый лед</a></li>
+                          <li><a href="catalog.html">Мелорин</a></li>
+                </ul>
               </li>
-              <li>
-                <a href="delivery.html">Доставка и оплата</a>
-              </li>
-              <li>
-                <a href="abaut-company.html">О компании</a>
-              </li>
+              <li><a href="delivery.html">Доставка и оплата</a></li>
+              <li><a href="abaut-company.html">О Компании</a></li>
             </ul>
             <ul class="user-navigation">
-              <li class="search">Лупа
-                <span></span>
-              </li>
-              <li class="login-link">Вход</li>
-              <li class="basket">Пусто</li>
+                <li class="search">
+                  <button type="submit" class="button-loupe"></button>
+                  <form>
+                      <input type="text" placeholder="Что ищем?">   
+                  </form>
+                </li>
+                <li class="login"><a class="login-link" href="login.html">Вход</a></li>
+                <li class="basket"><span>Пусто</span></li>
             </ul>
           </div>
-          <div class="tel-container">
-            <div class="tel-wrapper">
-              <p class="header-contacts">
-                <span class="time">С 10 до 20, ежедневно</span>
-                <span class="telnumber">8 812 450-25-25</span>
-              </p>
+          </div>
+        <div class="tel-container">
+          <div class="tel-wrapper">
+            <div class="header-contacts">
+                <p class="telnumber">C 10 до 20, ежедневно
+                <span>8 812 450-25-25</span>
+                </p>
             </div>
-          
+          </div>
           <ul class="breadcrumbs">
               <li><a href="index.html">Главная</a></li>
               <li><a href="catalog.html">Каталог</a></li>
@@ -63,13 +62,82 @@
 
     <main class="container">
 
-            <h2>Сливочное мороженое</h2>
+            <h1>Сливочное мороженое</h1>
             <section class="filters">
-                    <h3 class="visually-hidden">Фильтр товаров</h3>
-                    <!-- Здесь будет форма сортировки товаров-->
+                <h2 class="visually-hidden">Фильтр товаров</h2>
+                <form class="filter" method="get" action="https://echo.htmlacademy.ru">
+                  <div class="line-filtres upper-line-filtres">
+                      <fieldset class="sorting">
+                        <legend>Сортировка</legend>
+                          <select name="year">
+                              <option value="by-popularity">по полярности</option>
+                              <option value="by-price">по цене</option>
+                          </select>
+                      </fieldset>    
+                      <fieldset class="select-price">
+                        <legend>Цена: 100руб. - 500руб.</legend>
+                        <div class="range-controls">
+                            <div class="scale">
+                              <div class="bar"></div>
+                            </div>
+                            <div class="toggle min-toggle"></div>
+                            <div class="toggle max-toggle"></div>
+                        </div>
+                      </fieldset>
+                      <fieldset class="fat">
+                          <legend>Жирность:</legend>
+                          <ul>
+                            <li class="filter-option">
+                              <input class="visually-hidden filter-input filter-input-radio" type="radio" name="product-group" value="zero" id="filter-zero">
+                              <label for="filter-zero">0%</label>
+                            </li>
+                            <li class="filter-option">
+                              <input class="visually-hidden filter-input filter-input-radio" type="radio" name="product-group" value="hair-to10" id="filter-to10" checked>
+                              <label for="filter-to10">до 10%</label>
+                            </li>
+                            <li class="filter-option">
+                              <input class="visually-hidden filter-input filter-input-radio" type="radio" name="product-group" value="to30" id="filter-to30">
+                              <label for="filter-to30">до 30%</label>
+                            </li>
+                            <li class="filter-option">
+                              <input class="visually-hidden filter-input filter-input-radio" type="radio" name="product-group" value="higher30" id="filter-higher30">
+                              <label for="filter-higher30">выше 30%</label>
+                            </li>
+                          </ul>
+                      </fieldset>
+                  </div>
+                  <div class="line-filtres lower-line-filtres">
+                      <fieldset class="fillers">
+                        <legend>Наполнители:</legend>
+                          <ul>
+                            <li class="filter-option">
+                                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="chocolate" id="filter-chocolate" checked>
+                                <label for="filter-chocolate">шоколадные</label>
+                            </li>
+                            <li class="filter-option">
+                                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="sugar" id="filter-sugar" checked>
+                                <label for="filter-sugar">сахарные присыпки</label>
+                            </li>
+                            <li class="filter-option">
+                                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="fruts" id="filter-fruts">
+                                <label for="filter-fruts">фрукты</label>
+                            </li>
+                            <li class="filter-option">
+                                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="sirops" id="filter-sirops">
+                                <label for="filter-sirops">сиропы</label>
+                            </li>
+                            <li class="filter-option">
+                                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="djems" id="filter-djems">
+                                <label for="filter-djems">джемы</label>
+                            </li>
+                        </ul>
+                      </fieldset>
+                      <button type="submit" class="filter-button button">Применить</button>
+                  </div>     
+                </form>
             </section>
             
-            <section class="catalog-ice-cream">
+     <section class="catalog-ice-cream">
                     <ul class="catalog-list">  
                       <li class="catalog-item">
                         <h4>
