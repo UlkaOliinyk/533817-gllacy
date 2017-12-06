@@ -7,15 +7,16 @@ body {
         color: #ffffff;
         min-width: 1200px;
         height: 100%;
-        /*background-image: url("../private/gllacy-index-1200.jpg");*/
+        background-color: #849d8f;
+        /*background-image: url("../private/gllacy-index-1200-fon.jpg");*/
         background-repeat: no-repeat;
         background-size: 1200px auto;
-        background-color: #849d8f;
+        
     } 
 .inner-page {
   color: #ffffff;
   background-color: #849d8f;
-  background-image: url("../img/gllacy-catalog-1200.jpg");
+  /*background-image: url("../img/gllacy-catalog-1200.jpg");*/
   background-position: 0 0;
   background-repeat: no-repeat;
 }    
@@ -270,8 +271,9 @@ img {
     background-image: url("../img/entrance.svg");
     background-repeat: no-repeat;
 }
-.user-navigation .basket {
+.user-navigation .button-basket {
     position: relative; 
+    color: #ffffff;
     font-size: 14px;
     line-height: 16px;  
     padding-top: 7px;
@@ -280,8 +282,9 @@ img {
     padding-left: 45px;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 25px;
+    border-style: none;
 }
-.basket  span::before{
+.button-basket  span::before{
     content: "";
     position: absolute; 
     top: 5px;
@@ -292,12 +295,13 @@ img {
     background-repeat: no-repeat;
     background-position: 0 0;
 }
-.basket:hover,
-.basket:focus{
+.button-basket:hover,
+.button-basket:focus{
     color: #000000;
     background-color: rgb(255, 255, 255);
+
 }
-.basket :hover::before {
+.button-basket :hover::before {
     background-image: url("../img/basket-red.svg");
     background-repeat: no-repeat;
 }
@@ -427,7 +431,7 @@ input[type="radio"].visually-hidden {
     margin: 0 auto;
     text-align: center;
     position: relative;
-    /*opacity: 0.5;         временно для сетки*/
+    /*opacity: 0.1;         /*временно для сетки*/
     z-index: 0;
  }
 .slider-inner {
@@ -910,7 +914,6 @@ input[type="radio"].visually-hidden {
 .contacts {
     width: 100%;
     height: 430px;
-    /*background-color: #e5dec6;*/
     background-image: url("../img/map-1.jpg");
     background-repeat: no-repeat;
     background-position: 0 0;
@@ -921,12 +924,12 @@ input[type="radio"].visually-hidden {
     background-image: url("../img/pin.svg");
     background-repeat: no-repeat;
     top: 140px;   
-    left: 263px;
+    left: 265px;
     width: 80px;    
     height: 140px;
     z-index: 5;
 } 
-.contacts-wrapper {
+.contacts-wrapper { 
     position: absolute;
     min-width: 1150px;
     margin: 0 auto;
@@ -940,9 +943,10 @@ input[type="radio"].visually-hidden {
     border-radius: 20px;
     margin-left: auto;
     margin-right: -22px;
-    margin-top: 68px;
+    margin-top: 65px;
     margin-bottom: 60px;
     padding-top: 20px;
+    z-index: 49;
 }
 .contacts-right-blok p {
     font-size: 14px;
@@ -950,19 +954,27 @@ input[type="radio"].visually-hidden {
     margin-left: 23px;
     margin-top: 8px;
     margin-bottom: 20px;
-
 }
-.contacts-right-blok b {
+.contacts-right-blok .modal-map {
+    display: inline-block;
+    color: #020202; 
     font-size: 18px;
     line-height: 24px;
     font-weight: 700;
-    margin-top: 32px;
-    margin-bottom: 30px;
+    margin-top: 1px;
+    margin-bottom: 0;    
+}
+.contacts-right-blok b {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    padding-top: 4px;
 }
 .feedback-form-button{
     font-size: 18px;
     line-height: 24px;
-    margin-top: 8px;
+    margin-top: 6px;
     margin-left: 23px;
     padding: 11px 28px;
     text-align: center;
@@ -998,7 +1010,7 @@ h1 {
     text-shadow: none;
     background-image: none;
     box-shadow: none;
-    background-color: rgba(240, 120, 120, 0.4);
+    background-color: rgba(255, 255, 255, 0.4);
     border-radius: 25px;
 }
 fieldset legend {
@@ -1074,7 +1086,7 @@ fieldset legend {
     border: 9px solid white;
 }
 .max-toggle:hover {
-    top: 4px;
+    top: 5px;
     left: 132px;
     border: 9px solid white;
 }
@@ -1381,9 +1393,14 @@ fieldset legend {
 /*---------------------------------------------------------------------*/
 
 
-
+@keyframes bounce {
+  0% {transform: translateX(-500px);}
+  70% {transform: translateX(20px);}
+  90% {transform: translateX(-10px);}
+  100% {transform: translateX(0);}
+}
 .modal {
-    position: fixed;
+    position: absolute;
     background-color: #f8f7f4;
     width: 245px;
     height: 205px;
@@ -1391,13 +1408,21 @@ fieldset legend {
     border-radius: 8px;
     padding: 0;
     margin: 0;
-    z-index: 10;
+    display: none;
+    z-index: 51;
+}
+.modal-overlay {
+  position: absolute;
+  z-index: 50;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
 }
 .modal-login {
+    height: 180px;
     top: 60px;
-    right: 125px;   
+    right: 155px;   
     padding: 20px;
-    display: none;
 } 
 .modal a {
     font-size: 13px;
@@ -1412,8 +1437,11 @@ fieldset legend {
     text-decoration: none;
 }
 .login-form input[type="text"],
-.login-form input[type="password"] {
+.login-form input[type="password"],
+.feedback-form input[type="text"],
+.feedback-form textarea {
     box-sizing: border-box;
+    font-family: "Roboto", "Tahoma", sans-serif;
     font-weight: 700;
     font-size: 14px;
     color: #000000;
@@ -1426,15 +1454,22 @@ fieldset legend {
     border: 1px solid rgb(196, 195, 195);
 }
 .login-form input[type="text"]:hover,
-.login-form input[type="password"]:hover {
+.login-form input[type="password"]:hover,
+.feedback-form input[type="text"]:hover,
+.feedback-form textarea:hover {
     border-width: 2px;   
 }
 .login-form input[type="text"]:focus,
-.login-form input[type="password"]:focus {
+.login-form input[type="password"]:focus,
+.feedback-form input[type="text"]:focus,
+.feedback-form textarea:focus {
     border-width: 2px;
     border-color:rgba(46, 137, 228, 0.521);
 }
-.login-form input::placeholder{
+.login-form input::placeholder,
+.feedback-form input::placeholder,
+.feedback-form textarea::placeholder { 
+    font-family: "Roboto", "Tahoma", sans-serif;
     font-weight: 400;
     color: #777676; 
 }
@@ -1442,24 +1477,24 @@ fieldset legend {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    flex-direction: row-reverse; 
+    flex-direction: row-reverse;
+    margin-top: 12px; 
 }
 .login-help .right-column{
     width: 120px;
-    margin-top:5px;
+    margin-top: 5px;
 }
 .login-button{ 
     font-size: 18px;
     font-weight: 700;
     color:  #ffffff;
     padding: 14px 28px;
-    border-style: none;
-    
+    border-style: none;    
 }
 /*---------------------------------------------------------------------*/
 
 
-.modal-basket {   /*как выводить корзину на экран?*/
+.modal-basket {   
     position: absolute;
     display: flex; 
     flex-direction: column; 
@@ -1468,12 +1503,10 @@ fieldset legend {
     width: 540px;
     height: 220px;
     top: 60px;
-    right: -250px;   
-    padding: 20px;
+    right: 25px;   
+    padding: 20px; 
     display: none;
-}
-.user-navigation > .basket li:hover > .modal-basket {
-    display: block;
+    z-index: 51;  
 }
 .basket-list {
     list-style: none;
@@ -1532,7 +1565,6 @@ fieldset legend {
 .basket-close::after {
     transform: rotate(-45deg);
 }
-
 .finish-total-price{
     font-size: 15px;
     line-height: 18px;
@@ -1546,3 +1578,117 @@ fieldset legend {
     padding: 14px 20px;
     border-style: none; 
 }          
+/*--------------------------------------------------------------*/
+
+
+.modal-feedback { 
+    position:  fixed;
+    height: 400px;
+    width: 432px;
+    top: 338px;
+    right: 360px;   
+    padding: 23px;
+}
+.modal-feedback h2{
+    color: #000000;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+.modal-feedback input,
+.modal-feedback textarea {
+    margin-top: 11px;
+}
+.modal-feedback textarea {
+    padding-top: 8px;
+}
+.feedback-form textarea::placeholder {
+    padding-top: 3px;
+}
+.overlay-dark{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index: 50;
+    background:#000;
+    opacity: 0.5;
+    display: none;
+}
+.modal-close {
+  position: absolute;
+  top: 13px;
+  right: 18px;
+  width: 22px;
+  height: 22px;
+  font-size: 0;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.modal-close:focus {
+ outline: none;
+}
+.modal-close::before,
+.modal-close::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 2px;
+  width: 22px;
+  height: 2px;
+  background-color: #181717;
+}
+.modal-close::before {
+  transform: rotate(45deg);
+}
+.modal-close::after {
+  transform: rotate(-45deg);
+}
+.modal-feedback textarea {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 155px;
+    resize: none;
+    overflow:  hidden;
+    outline: none;
+	-moz-appearance: none;
+	border: 1px solid rgb(204, 203, 203);
+}
+.feedback-button{ 
+    font-size: 18px;
+    font-weight: 700;
+    color:  #ffffff;
+    padding: 14px 28px;
+    border-style: none;
+    margin-left: 280px;
+    margin-top: 11px;    
+}
+
+
+.modal-yandex-map {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  margin: 0;
+  width: 100%;
+  height: 430px;
+  z-index: 48;
+  display: none;
+}
+
+.modal-show {
+    display: block;
+}
+.modal-show-bounce {
+    display: block;
+    animation: bounce 0.6s;
+}
