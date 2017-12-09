@@ -10,7 +10,9 @@
 </head>
 
 <body>
-
+  <div class="overlay-color-green"></div>
+  <div class="overlay-color-pink"></div>
+  <div class="overlay-color-choco"></div>
   <header class="main-header">
     <nav class="main-navigation">
       <div class="main-navigation-wrapper">
@@ -29,7 +31,7 @@
               </ul>
             </li>
             <li><a href="delivery.html">Доставка и оплата</a></li>
-            <li><a href="abaut-company.html">О Компании</a></li>
+            <li><a href="about-company.html">О Компании</a></li>
           </ul>
           <ul class="user-navigation">
               <li class="search">
@@ -54,8 +56,10 @@
       </div>
     </nav>
 
+
+    
     <div class="container-big">
-      <div class="slider">
+       <div class="slider">
           <input type="radio" id="slide1" name="toggle" checked>
           <input type="radio" id="slide2" name="toggle">
           <input type="radio" id="slide3" name="toggle">
@@ -72,7 +76,8 @@
               <div class="slide-title"><p>Шоколадное с сиропом<br> и клубничный сорбет</p></div>
                 <a class="button slider-button" href="#">Давайте оба!</a>
           </div> 
-        </div>   
+        </div>
+     
         <div class="controls">
           <label for="slide1"></label>
           <label for="slide2"></label>
@@ -84,7 +89,7 @@
 
 
 
- <main class="container">
+<main class="container">
     <h1 class="visually-hidden">Магазин мороженого «Глэйси»</h1>
     <section class="shares">
       <ul class="shares-list">
@@ -191,9 +196,9 @@
         </div>
       </div>
     </section>
-  </main>
+</main>
 
-  <div class="container-big">
+<div class="container-big">
     <section class="contacts">
       <div class="pin"></div>
       <div class="contacts-wrapper">
@@ -217,7 +222,8 @@
         <button class="modal-close" type="button">Закрыть</button>
       </div>
     </section>
-  </div>
+</div>
+
 
 <footer class="main-footer">
     <div class="container">
@@ -249,7 +255,6 @@
 
 
   <section class="modal modal-login">
-      <div id="modal-overlay"></div>
       <h2 class="visually-hidden">Личный кабинет</h2>
     <form class="login-form" action="http://echo.htmlacademy.ru" method="post">
       <p>
@@ -272,7 +277,7 @@
 
 
 
-  <section class="modal modal-basket">
+  <section class="modal modal-basket basket-flex">
     <h2 class="visually-hidden">Корзина заказов</h2>
     <ul class="basket-list">
         <li class="basket-item">
@@ -331,11 +336,7 @@
 </section>
 
 
-
-
-
 <script src="js/modals-min.js"></script>
-  
   
 </body>
 </html>
