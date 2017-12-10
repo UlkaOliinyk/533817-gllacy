@@ -57,11 +57,66 @@
             </li>
             <li class="login">
               <a class="login-link" href="login.html">Вход</a>
+              <section class="modal modal-login">
+                <h2 class="visually-hidden">Личный кабинет</h2>
+                <form class="login-form" action="http://echo.htmlacademy.ru" method="post">
+                  <p>
+                    <label class="visually-hidden" for="user-login">Электронная почта</label>
+                    <input class="login-icon-user" id="user-login" type="text" name="login" placeholder="Электронная почта">
+                  </p>
+                  <p>
+                    <label class="visually-hidden" for="user-password">Пароль</label>
+                    <input class="login-icon-password" id="user-password" type="password" name="password" placeholder="Пароль">
+                  </p>
+                  <div class="login-help">
+                    <div class="right-column">
+                      <a class="restore" href="#">Забыли пароль?</a>
+                      <a class="new registration" href="#">Новая регистрация</a>
+                    </div>
+                    <button class="button login-button" type="submit">Войти</button>
+                  </div>
+                </form>
+              </section>
             </li>
             <li class="basket">
               <button class="button-basket">
                 <span>Пусто</span>
               </button>
+              <section class="modal modal-basket basket-flex">
+                <h2 class="visually-hidden">Корзина заказов</h2>
+                <ul class="basket-list">
+                  <li class="basket-item">
+                    <button class="basket-close" type="button">Удалить</button>
+                    <img src="img/product-1.jpg" width="35" height="35" alt="Митиатюра мороженного">
+                    <h4>
+                      <a href="catalog.html">Пломбир с апельсиновым джемом</a>
+                    </h4>
+                    <p class="basket-item-price">
+                      1,5 кг x
+                      <span>200 руб</span>
+                    </p>
+                    <p class="total-price">
+                      300 руб.
+                    </p>
+                  </li>
+                  <li class="basket-item">
+                    <button class="basket-close" type="button">Удалить</button>
+                    <img src="img/product-3.jpg" width="35" height="35" alt="Митиатюра мороженного">
+                    <h4>
+                      <a href="catalog.html">Клубничный пломбир с присыпкой из белого шоколада</a>
+                    </h4>
+                    <p class="basket-item-price">
+                      1,5 кг x
+                      <span>300 руб</span>
+                    </p>
+                    <p class="total-price">
+                      450 руб.
+                    </p>
+                  </li>
+                </ul>
+                <div class="finish-total-price">Итого: 750руб.</div>
+                <button class="button basket-button" type="submit">Оформить заказ</button>
+              </section>
             </li>
           </ul>
         </div>
@@ -319,6 +374,7 @@
             <a class="footer-info" href="#">Экологические стандарты</a>
           </li>
         </ul>
+        </div>
         <div class="footer-copyright">
           <img src="img/logo-htmlacademy.svg" width="108" height="39" alt="Логотип HTML Academy">
           <p>Сделано в
@@ -332,64 +388,11 @@
 
 
 
-  <section class="modal modal-login">
-    <h2 class="visually-hidden">Личный кабинет</h2>
-    <form class="login-form" action="http://echo.htmlacademy.ru" method="post">
-      <p>
-        <label class="visually-hidden" for="user-login">Электронная почта</label>
-        <input class="login-icon-user" id="user-login" type="text" name="login" placeholder="Электронная почта">
-      </p>
-      <p>
-        <label class="visually-hidden" for="user-password">Пароль</label>
-        <input class="login-icon-password" id="user-password" type="password" name="password" placeholder="Пароль">
-      </p>
-      <div class="login-help">
-        <div class="right-column">
-          <a class="restore" href="#">Забыли пароль?</a>
-          <a class="new registration" href="#">Новая регистрация</a>
-        </div>
-        <button class="button login-button" type="submit">Войти</button>
-      </div>
-    </form>
-  </section>
+  
 
 
 
-  <section class="modal modal-basket basket-flex">
-    <h2 class="visually-hidden">Корзина заказов</h2>
-    <ul class="basket-list">
-      <li class="basket-item">
-        <button class="basket-close" type="button">Удалить</button>
-        <img src="img/product-1.jpg" width="35" height="35" alt="Митиатюра мороженного">
-        <h4>
-          <a href="catalog.html">Пломбир с апельсиновым джемом</a>
-        </h4>
-        <p class="basket-item-price">
-          1,5 кг x
-          <span>200 руб</span>
-        </p>
-        <p class="total-price">
-          300 руб.
-        </p>
-      </li>
-      <li class="basket-item">
-        <button class="basket-close" type="button">Удалить</button>
-        <img src="img/product-3.jpg" width="35" height="35" alt="Митиатюра мороженного">
-        <h4>
-          <a href="catalog.html">Клубничный пломбир с присыпкой из белого шоколада</a>
-        </h4>
-        <p class="basket-item-price">
-          1,5 кг x
-          <span>300 руб</span>
-        </p>
-        <p class="total-price">
-          450 руб.
-        </p>
-      </li>
-    </ul>
-    <div class="finish-total-price">Итого: 750руб.</div>
-    <button class="button basket-button" type="submit">Оформить заказ</button>
-  </section>
+  
 
 
 
