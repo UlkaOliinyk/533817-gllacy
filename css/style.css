@@ -1186,6 +1186,10 @@ appearance: none;
 .sorting select::-ms-expand {
 display: none;
 }
+.sorting select:hover {
+ color: #000000;
+ font-weight: 700;
+}
 .select-price {
 width: 220px;
 }
@@ -1293,7 +1297,7 @@ left: -33px;
 top: -2px; 
 width: 16px;
 height: 16px;    
-border: 4px solid #eaeaea;
+border: 4px solid #e2e1e1;
 border-radius: 50%;
 }    
 .filter-input-radio:checked + label::after {
@@ -1303,7 +1307,7 @@ top: 6px;
 left: -25px; 
 width: 8px;
 height: 8px;  
-background-color: #eaeaea;
+background-color: #e2e1e1;
 border-radius: 50%;
 }
 .filter-input-radio + label:hover::before {
